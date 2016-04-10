@@ -237,4 +237,14 @@ class UsersController < ApplicationController
     redirect_to search_path
     #This path exists to reroute to search to reset cat_idx and further randomize results
   end
+
+  private
+  def client
+     @client ||= Yelp::Client.new({ consumer_key: ENV['config.consumer_key'],
+      consumer_secret: ENV['config.consumer_secret'],
+      token: ENV['config.token'],
+      token_secret: ENV['config.token_secret']
+    })
+  end
+  
 end
