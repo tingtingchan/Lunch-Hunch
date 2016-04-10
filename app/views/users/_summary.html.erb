@@ -1,0 +1,20 @@
+<div class="magic openDownLeft">
+	<div id="summary-title">This is what we're working with:</div> 
+	<div id="summary">
+		<%= @mood %>
+		<%= @weather %>
+		<%= @healthy %>
+		<%= @spicy %>
+		<%= @price %>
+		<%= @restriction %>
+	</div>
+</div>
+
+<%= form_for @user, :url => :choiceForToday, method: :post do |f| %>
+	<%= f.hidden_field :latitude %>
+	<%= f.hidden_field :longitude %>
+	<div class="sweep-to-right">
+		<%= f.submit "LET'S GET YOU FED" %>
+	</div>
+	<br />
+<% end %>

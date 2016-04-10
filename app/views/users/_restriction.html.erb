@@ -1,0 +1,26 @@
+<div class="question">
+	<br/><br/>
+	<span style="color: grey; font-size: 20px">Question 1/6:</span><br/>
+	<div class="animated flipInX">
+		Any dietary restrictions?
+	</div>
+	<ul>
+		<li>
+			<%= link_to image_tag('/assets/skip.svg', style: "width: 25px") + ' Skip', questionMood_path(:restriction => ""), :method => :post, id: 'skip', remote: true %>
+		</li>
+	</ul>
+</div>
+<ul class="answer">
+	<li class="three-choices">
+		<img src="/assets/kosher.svg" width="50">
+		<%= link_to "Kosher", questionMood_path(:restriction => "kosher"), :method => :post, id: 'three-choices', remote: true %>
+	</li>
+	<li class="three-choices">
+		<img src="/assets/vegetarian.svg" width="50">
+		<%= link_to "Vegetarian", questionMood_path(:restriction => "vegetarian"), :method => :post, id: 'three-choices', remote: true %>
+	</li>
+	<li class="three-choices-01">
+		<img src="/assets/halal.svg" width="50">
+		<%= link_to "Halal", questionMood_path(:restriction => "halal"), :method => :post, id: 'three-choices', remote: true %>
+	</li>
+</ul>
